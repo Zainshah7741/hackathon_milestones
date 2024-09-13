@@ -1,0 +1,235 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* page */
+#page {
+  width: 100%;
+  max-width: 550px;
+  margin: 10px auto;
+  display: grid;
+  grid-template-areas:
+    "img name name name"
+    "contact experience experience experience"
+    "education experience experience experience"
+    "skills experience experience experience";
+  grid-gap: 0.3rem;
+  padding: 10px;
+  position: relative;
+}
+
+/* image */
+#img {
+  grid-area: img;
+  width: 140px;
+  height: 150px;
+  margin: auto;
+}
+
+#page::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  background-color: rgb(49, 97, 122);
+  z-index: -1;
+  height: 300px;
+  width: 300px;
+  border-bottom-right-radius: 240px;
+  opacity: 0.6;
+}
+
+/* name */
+#name {
+  grid-area: name;
+}
+
+#name h1 {
+  margin: 20px 0;
+  font-size: 2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-shadow: 3px 2px 4px black;
+}
+
+#name p {
+  text-align: justify;
+  margin: 0 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+/* contact */
+#contact {
+  border-top: 2px solid skyblue;
+  grid-area: contact;
+  margin: 10px 10px 0 10px;
+  width: 160px;
+  padding-top: 5px;
+}
+
+#contact ul {
+  list-style: none;
+  line-height: 25px;
+  font-size: 0.7rem;
+  margin-top: 10px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 600;
+}
+
+#contact img {
+  width: 12px;
+}
+
+/* experience */
+#experience {
+  grid-area: experience;
+  border-top: 2px solid skyblue;
+  margin-top: 27px;
+  padding-top: 5px;
+}
+
+.experiences {
+  margin: 7px 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.experiences h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.experiences h5 {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.experiences p {
+  font-size: 0.7rem;
+  margin-top: 3px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  border-left: 1px dotted rgb(0, 0, 0);
+  padding-left: 6px;
+}
+
+/* skills */
+#skills {
+  grid-area: skills;
+  border-top: 2px solid skyblue;
+  width: 160px;
+  height: 170px;
+  margin: 10px;
+  padding-top: 5px;
+}
+
+#skills ul {
+  font-size: 0.8rem;
+  margin-top: 5px;
+  font-family: cursive;
+  text-decoration: underline solid 1px;
+}
+
+#toggle {
+  display: none;
+}
+
+/* education */
+#education {
+  grid-area: education;
+  border-top: 2px solid skyblue;
+  margin: 10px;
+  width: 160px;
+  padding-top: 5px;
+}
+
+.edu {
+  margin-top: 10px;
+}
+
+.edu h4 {
+  font-size: 0.8rem;
+  line-height: 20px;
+}
+
+.edu h5 {
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+/* utility classes */
+.h2 {
+  font-size: 1rem;
+  font-style: oblique;
+  font-family: "Arial Narrow Bold", sans-serif;
+  text-decoration: underline solid rgb(99, 96, 96);
+  text-shadow: 0.5px 0.5px 1px black;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  font-size: 0.7rem;
+  margin: 10px 30px;
+  background-color: rgb(43, 16, 16);
+  color: rgb(255, 255, 255);
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  color: red;
+  background-color: black;
+}
+
+#back {
+  background-color: rgb(49, 97, 122);
+  width: 345px;
+  height: 292px;
+  border-top-left-radius: 100%;
+  opacity: 0.6;
+  display: inline block;
+  z-index: -1;
+  position: absolute;
+}
+
+@media (max-width: 550px) {
+  #page {
+    grid-template-areas:
+      "img"
+      "name"
+      "contact"
+      "experience"
+      "education"
+      "skills";
+    grid-template-columns: 1fr;
+  }
+
+  #img {
+    margin: 0 auto;
+    display: block;
+  }
+
+  #name {
+    text-align: center;
+  }
+
+  #name h1 {
+    font-size: 1.5rem;
+  }
+
+  #name p {
+    font-size: 0.75rem;
+  }
+
+  #contact,
+  #skills,
+  #education {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  #back {
+    display: none;
+  }
+}
